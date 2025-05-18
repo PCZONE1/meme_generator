@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Meme Generator</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>🎨 Create Your Meme</h1>
+    <form action="{{ url_for('generate') }}" method="post" enctype="multipart/form-data">
+      <label for="image">Select an image:</label><br>
+      <input type="file" name="image" id="image" accept="image/*" required><br>
+
+      <label for="top_text">Top Text:</label><br>
+      <input type="text" name="top_text" id="top_text" placeholder="Enter top text" required><br>
+
+      <label for="bottom_text">Bottom Text (optional):</label><br>
+      <input type="text" name="bottom_text" id="bottom_text" placeholder="Enter bottom text (or leave blank)"><br>
+
+      <button type="submit">Generate Meme</button>
+    </form>
+  </div>
+</body>
+</html>
